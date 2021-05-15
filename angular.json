@@ -121,8 +121,13 @@
               "devServerTarget": "za-co-rwengelbrecht:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "za-co-rwengelbrecht"
 }
