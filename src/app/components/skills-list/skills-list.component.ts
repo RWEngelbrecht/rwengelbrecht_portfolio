@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-skills-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsListComponent implements OnInit {
 
-  constructor() { }
+  skills: Observable<any[]>;
+
+  constructor(
+    private dataService: DataService
+  ) { }
 
   ngOnInit(): void {
+    this.skills = this.dataService.createCollection('skills-list');
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-projects-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsListComponent implements OnInit {
 
-  constructor() { }
+  $projects: Observable<any[]>;
+
+  constructor(
+    private dataService: DataService
+  ) { }
 
   ngOnInit(): void {
+    this.$projects = this.dataService.createCollection('project-list');
   }
 
 }

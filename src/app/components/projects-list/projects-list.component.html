@@ -1,1 +1,17 @@
-<p>projects-list works!</p>
+<!-- TODO: update classes to use primeng -->
+<div class="ui container">
+  <div class="ui horizontal divider">
+    <h1 id="projects">Projects</h1>
+  </div>
+
+  <div class="ui center aligned">
+    <div class="ui large horizontal divided list">
+      <div class="item" *ngFor="let project of $projects | async">
+        <img class="ui avatar image" src="{{ project.iconUrl }}" alt="{{ project.name }}">
+        <div class="content">
+          <a class="header" href="{{ project.url }}">{{ project.name }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

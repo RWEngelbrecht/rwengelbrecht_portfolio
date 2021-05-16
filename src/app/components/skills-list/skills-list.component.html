@@ -1,1 +1,15 @@
-<p>skills-list works!</p>
+<!-- TODO: update classes to use primeng -->
+<div class="ui container">
+  <div class="ui horizontal divider">
+    <h1 id="skills">Technology Stack</h1>
+  </div>
+  <div class="ui five column stackable grid" align="center">
+    <div class="column" *ngFor="let skills of skills | async">
+      <div class="ui tiny images">
+        <img class="ui rounded image" src="{{ skill.imgUrl }}">
+        <div>{{ skill.name }}</div>
+      </div>
+    </div>
+
+  </div>
+</div>
