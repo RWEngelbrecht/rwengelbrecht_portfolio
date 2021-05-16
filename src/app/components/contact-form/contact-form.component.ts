@@ -42,7 +42,7 @@ export class ContactFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public sendMail() {
+  public sendEmail() {
     this.toggleLoading();
     this.dataService.saveContactDetails(this.contactMeForm.value)
       .then(() => {this.toggleSuccess()}).catch(err => console.error('Something went wrong: ', err))
