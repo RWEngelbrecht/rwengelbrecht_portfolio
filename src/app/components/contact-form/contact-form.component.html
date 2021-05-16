@@ -1,1 +1,76 @@
-<p>contact-form works!</p>
+<!-- TODO: update class names to use primeng -->
+<div class="ui container">
+  <div class="ui horizontal divider">
+    <h1>Contact Me</h1>
+  </div>
+  <form [ngClass]="formClassState" [formGroup]="contactMeForm" (ngSubmit)="sendEmail()">
+    <div class="ui success message" *ngIf="!hideSuccess()">
+      <div class="header">Message Submitted</div>
+      <p>Your message has been sent. Will it arrive at its destination? We can only hope.</p>
+    </div>
+    <h2 class="contact">Get in touch</h2>
+    <div class="fields">
+      <div class="field">
+        <label for="">
+          Name
+          <input placeholder="First name" type="text" formControlName="name">
+        </label>
+
+        <div class="ui negative message" *ngIf="contactMeForm.get('name').invalid && (contactMeForm.get('name').dirty || contactMeForm.get('name').touched)">
+          <div class="header">
+            Something went wrong with the name you entered...
+          </div>
+          <ul class="list">
+            <li>Name is required.</li>
+            <li>Your name must have at least 2 letters in it.</li>
+            <li>One-letter names aren't a thing, right?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="field">
+        <label for="">
+          Email Address
+          <input placeholder="Email address" formControlName="email" type="email" >
+        </label>
+        <div class="ui negative message" *ngIf="contactMeForm.get('email').invalid && (contactMeForm.get('email').dirty || contactMeForm.get('email').touched)">
+          That email seems invalid...
+        </div>
+      </div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <label for="">
+          Contact Number (Optional)
+          <input placeholder="Contact number" formControlName="contactNumber" type="text" maxlength="10">
+        </label>
+        <div class="ui negative message" *ngIf="contactMeForm.get('contactNumber').invalid && (contactMeForm.get('contactNumber').dirty || contactMeForm.get('contactNumber').touched)" >
+          <div class="header">
+            That contact number seems invalid...
+          </div>
+          <ul class="list">
+            <li>Contact number must be 10 digits long. Who're you trying to fool?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <label for="">
+          Message
+          <textarea placeholder="CAUTION: Any text entered here will be sent to me... (if you click send)" formControlName="message"></textarea>
+        </label>
+        <div class="ui negative message" *ngIf="contactMeForm.get('message').invalid && (contactMeForm.get('message').touched || contactMeForm.get('message').dirty)">
+          <div class="header">
+            Your message does not seem to be valid...
+          </div>
+          <ul class="list">
+            <li>Message must hold a <strong>minimum</strong> of 10 characters...</li>
+            <li>Message must hold a <strong>maximum</strong> of 200 characters...</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button class="ui primary button" type="submit" [disabled]="!contactMeForm.valid">Send Email</button>
+    <div class="ui error message"></div>
+  </form>
+</div>
