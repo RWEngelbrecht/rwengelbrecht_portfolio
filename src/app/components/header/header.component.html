@@ -1,5 +1,23 @@
-<!-- TODO: update class names and icons to use primeng -->
-<div class="ui menu">
+<!-- TODO: update button colours -->
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+    <a [href]="cvDownloadLink">
+      <p-button class="p-mr-2" icon="pi pi-cloud-download"></p-button>
+    </a>
+  </div>
+
+  <div class="p-toolbar-group-right">
+    <a [href]="githubLink">
+      <button pButton class="p-mr-2" icon="pi pi-github" style="margin-right:10px"></button>
+    </a>
+    <a [href]="linkedinLink">
+      <button pButton class="p-mr-2" label="in"></button>
+    </a>
+  </div>
+</p-toolbar>
+
+
+<!-- <div class="ui menu">
   <a class="ui item" [href]="cvDownloadLink">
     <div class="ui icon" data-tooltip="Download my CV" data-position="bottom left">
       <i class="download icon" style="color: #0073af"></i>
@@ -19,4 +37,4 @@
     </a>
   </div>
 
-</div>
+</div> -->

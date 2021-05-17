@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  resumeDownloadLink = '#'; // Add download link here
+  githubLink = '#'; // Add github link here
+  twitterlink = '#'; // Add twitter link here
+  linkedinLink = '#'; // You guessed it!! LinkedIn link here
+
+  messagesCount$: Observable<any>;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
+    public dataService: DataService
+  ) { }
 
   ngOnInit(): void {
+    this.messagesCount$ = this.dataService.getMessagesCount();
   }
 
+  public logout() {
+    this.authService.logout()
+      .then(() => this.router.navigate(['/'], { relativeTo: this.route }))
+      .catch(err => {
+        console.log('Error logging out: ', err.message);
+        this.router.navigate(['/'], { relativeTo: this.route });
+      });
+  }
 }
