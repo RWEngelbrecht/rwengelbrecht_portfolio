@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 
 import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
+import {DividerModule} from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {ButtonModule} from 'primeng/button';
     AngularFireStorageModule,
     AngularFireAuthModule,
     ToolbarModule,
-    ButtonModule
+    ButtonModule,
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
