@@ -21,6 +21,8 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {DividerModule} from 'primeng/divider';
 import {CardModule} from 'primeng/card';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {CardModule} from 'primeng/card';
     ToolbarModule,
     ButtonModule,
     DividerModule,
-    CardModule
+    CardModule,
+    InputTextModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
