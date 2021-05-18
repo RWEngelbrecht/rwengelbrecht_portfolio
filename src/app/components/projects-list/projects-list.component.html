@@ -4,17 +4,17 @@
     <p-divider align="center">
       <div class="p-text-uppercase p-text-light" style="color: white" id="projects">Projects</div>
     </p-divider>
-      <div class="p-d-inline-flex p-flex-wrap">
-        <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let project of $projects | async">
-          <p-card-content>
-            <ng-template pTemplate="header">
-              <img src="{{ project.iconUrl }}" alt="{{ project.name }}">
-            </ng-template>
-            <div class="">
-              <a class="" href="{{ project.url }}">{{ project.name }}</a>
-            </div>
-          </p-card-content>
-        </p-card>
-      </div>
+    <div class="p-d-inline-flex p-flex-wrap p-shadow-4">
+      <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let project of $projects | async">
+        <p-card-content>
+          <ng-template pTemplate="header">
+            <img src="{{ project.iconUrl }}" alt="{{ project.name }}">
+          </ng-template>
+          <div class="">
+            <a class="" href="{{ project.url }}">{{ project.name }}</a>
+          </div>
+        </p-card-content>
+      </p-card>
+    </div>
   </div>
 </div>
