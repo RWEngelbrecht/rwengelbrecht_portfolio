@@ -1,9 +1,9 @@
 <!-- TODO: update class names to use primeng -->
 <div class="p-grid">
-  <div class="p-col-6 p-offset-3" *ngFor="let profile of $profile | async">
+  <div class="p-col-10 p-offset-1 p-d-flex-block" *ngFor="let profile of $profile | async">
 
     <div class="p-shadow-3" style="margin-top: 10px;">
-      <div class="card">
+      <div class="p-text-center">
         <div class="image">
           <img src="{{ profile.downloadUrl }}" />
         </div>
@@ -16,19 +16,24 @@
             Currently: {{ profile.jobTitle }} at {{ profile.company }}
           </div>
         </div>
-        <div class="extra content">
-          <span class="left floated">
+        <div class="p-col-8 p-offset-2">
+          <p-divider type="dashed"></p-divider>
+        </div>
+        <div class="" style="padding-bottom: 10px">
             (something cool) since: {{ profile.startYear }}
-          </span>
         </div>
       </div>
     </div>
 
-    <div class="ui horizontal divider">
-      <h1 id="aboutMe">About Me</h1>
-    </div>
+    <p-divider align="center">
+      <div class="p-text-center p-text-uppercase p-text-light" style="color: white">
+        About Me
+      </div>
+    </p-divider>
     <div class="p-shadow-3">
-      <p>{{ profile.aboutMe }}</p>
+      <div class="p-text-center" style="padding: 10px">
+        <p>{{ profile.aboutMe }}</p>
+      </div>
     </div>
   </div>
 </div>
