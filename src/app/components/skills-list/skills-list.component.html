@@ -1,15 +1,18 @@
 <!-- TODO: update classes to use primeng -->
-<div class="ui container">
-  <div class="ui horizontal divider">
-    <h1 id="skills">Technology Stack</h1>
-  </div>
-  <div class="ui five column stackable grid" align="center">
-    <div class="column" *ngFor="let skills of skills | async">
-      <div class="ui tiny images">
-        <img class="ui rounded image" src="{{ skill.imgUrl }}">
-        <div>{{ skill.name }}</div>
-      </div>
+<div class="p-grid">
+  <div class="p-col-10 p-offset-1">
+    <p-divider align="center">
+      <div class="p-text-uppercase p-text-light" style="color: white" id="projects" id="skills">Skills</div>
+    </p-divider>
+    <div class="p-d-inline-flex p-flex-wrap">
+      <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let skill of skills | async">
+        <p-card-content>
+          <ng-template pTemplate="header">
+            <img class="ui rounded image" src="{{ skill.imgUrl }}">
+          </ng-template>
+          <div>{{ skill.name }}</div>
+        </p-card-content>
+      </p-card>
     </div>
-
   </div>
 </div>
