@@ -2,38 +2,38 @@
 <div class="p-grid">
   <div class="p-col-10 p-offset-1 p-d-flex-block" *ngFor="let profile of $profile | async">
 
-    <div class="p-shadow-3" style="margin-top: 10px;">
       <div class="p-text-center">
         <div class="image">
           <img src="{{ profile.downloadUrl }}" />
         </div>
-        <div class="content">
-          <div class="header">{{ profile.firstName }} {{ profile.lastName }}</div>
-          <div class="meta">
-            <a>{{ profile.jobTitle }}</a>
-          </div>
-          <div class="description">
-            Currently: {{ profile.jobTitle }} at {{ profile.company }}
-          </div>
-        </div>
-        <div class="p-col-8 p-offset-2">
-          <p-divider type="dashed"></p-divider>
-        </div>
-        <div class="" style="padding-bottom: 10px">
-            (something cool) since: {{ profile.startYear }}
-        </div>
+        <p-card>
+          <p-card-content>
+            <div class="header">{{ profile.firstName }} {{ profile.lastName }}</div>
+            <div class="meta">
+              <a>{{ profile.jobTitle }}</a>
+            </div>
+            <div class="description">
+              Currently: {{ profile.jobTitle }} at {{ profile.company }}
+            </div>
+            <p-divider type="dashed"></p-divider>
+            <div class="" style="padding-bottom: 10px">
+                Coding since: {{ profile.startYear }}
+            </div>
+          </p-card-content>
+        </p-card>
       </div>
-    </div>
 
     <p-divider align="center">
       <div class="p-text-center p-text-uppercase p-text-light" style="color: white">
         About Me
       </div>
     </p-divider>
-    <div class="p-shadow-3">
-      <div class="p-text-center" style="padding: 10px">
-        <p>{{ profile.aboutMe }}</p>
-      </div>
-    </div>
+    <p-card>
+      <p-card-content>
+        <div class="p-text-center" >
+          <p>{{ profile.aboutMe }}</p>
+        </div>
+      </p-card-content>
+    </p-card>
   </div>
 </div>
