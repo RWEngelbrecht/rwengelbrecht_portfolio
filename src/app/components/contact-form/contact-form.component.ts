@@ -52,7 +52,7 @@ export class ContactFormComponent implements OnInit {
       });
   }
 
-  private toggleLoading() {
+  public toggleLoading() {
     if (!this.isLoading) {
       this.isLoading = true;
       this.formClassState = 'ui equal width form loading segment';
@@ -62,7 +62,7 @@ export class ContactFormComponent implements OnInit {
     }
   }
 
-  private toggleSuccess() {
+  public toggleSuccess() {
     if (!this.isSuccessful) {
       this.isSuccessful = true;
       this.formClassState = 'ui equal width form segment success';
