@@ -1,21 +1,13 @@
-<!-- TODO: update button colours -->
-<!-- TODO: add tooltips -->
-<p-toolbar>
-  <div class="p-toolbar-group-left">
-    <a [href]="cvDownloadLink">
-      <p-button class="p-mr-2" icon="pi pi-cloud-download"></p-button>
-    </a>
-  </div>
-
-  <div class="p-toolbar-group-right">
-    <a [href]="githubLink">
-      <button pButton class="p-mr-2" icon="pi pi-github" style="margin-right:10px"></button>
-    </a>
-    <a [href]="linkedinLink">
-      <button pButton class="p-mr-2" label="in"></button>
-    </a>
-  </div>
-</p-toolbar>
+<!-- TODO: change picture -->
+<!-- TODO: buttons flex right? -->
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <div class="p-d-inline-flex p-flex-wrap">
+      <img src="../../../assets/testing.jpg" height="40" class="p-d-inline p-mr-2" style="margin-top: 10px;">
+      <h4 class="p-d-inline p-mr-2">Rigardt Engelbrecht</h4>
+    </div>
+  </ng-template>
+</p-menubar>
 
 
 <!-- <div class="ui menu">
