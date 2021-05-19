@@ -17,7 +17,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
-import {ToolbarModule} from 'primeng/toolbar';
+import {MenubarModule} from 'primeng/menubar';
 import {ButtonModule} from 'primeng/button';
 import {DividerModule} from 'primeng/divider';
 import {CardModule} from 'primeng/card';
@@ -43,7 +43,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
-    ToolbarModule,
+    MenubarModule,
     ButtonModule,
     DividerModule,
     CardModule,
