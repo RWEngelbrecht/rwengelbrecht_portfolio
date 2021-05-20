@@ -5,7 +5,11 @@ import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.co
 const routes: Routes = [
   {path: '', component: PortfolioPageComponent},
   {path: 'home', component: PortfolioPageComponent},
-  {path: 'auth', loadChildren: './admin/admin.module#AdminModule'},
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('src/app/admin/admin.module').then((m) => m.AdminModule)
+    },
   {path: '**', component: PortfolioPageComponent},
 ];
 
