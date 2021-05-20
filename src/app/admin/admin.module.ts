@@ -13,13 +13,28 @@ import { AdminSkillsListComponent } from './components/admin-skills-list/admin-s
 import { AdminToolsListComponent } from './components/admin-tools-list/admin-tools-list.component';
 import { FormModalComponent } from './components/form-modal/form-modal.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AdminComponent, AdminPageComponent, AuthPageComponent, MessagesPageComponent, AdminAboutMeComponent, AdminMessagesComponent, AdminProjectListComponent, AdminSkillsListComponent, AdminToolsListComponent, FormModalComponent, HeaderComponent],
+  declarations: [
+    AdminComponent,
+    AdminPageComponent,
+    AuthPageComponent,
+    MessagesPageComponent,
+    AdminAboutMeComponent,
+    AdminMessagesComponent,
+    AdminProjectListComponent,
+    AdminSkillsListComponent,
+    AdminToolsListComponent,
+    FormModalComponent,
+    HeaderComponent
+  ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
