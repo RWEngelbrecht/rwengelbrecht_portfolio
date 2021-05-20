@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { AuthPageComponent } from './pages/auth-page/auth-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { MessagesPageComponent } from './pages/messages-page/messages-page.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: AdminComponent }
+  { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard] },
+    { path: 'messages', component: MessagesPageComponent, canActivate: [AuthGuard] },
+    { path: 'auth', component: AuthPageComponent },
+    { path: '**', component: AuthPageComponent }
 ];
 
 @NgModule({
