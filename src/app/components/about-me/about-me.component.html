@@ -1,11 +1,11 @@
 <div class="p-grid">
-  <div class="p-col-10 p-offset-1 p-d-flex-block" *ngFor="let profile of $profile | async">
+  <div class="p-col-10 p-offset-1 p-d-flex-block" *ngFor="let profile of $profile | async" style="margin-top: 10px;">
 
       <div class="p-text-center">
-        <div class="image">
-          <img src="{{ profile.downloadUrl }}" />
-        </div>
         <p-card>
+          <div class="image">
+            <img src="{{ profile.downloadUrl }}" />
+          </div>
           <p-card-content>
             <div class="header">{{ profile.firstName }} {{ profile.lastName }}</div>
             <div class="meta">
