@@ -26,8 +26,6 @@
         <div>{{ uploadPercent | async }}</div>
       </div>
     </div>
-  </div>
-
     <div class="ui button basic blue" (click)="editModal(profile)">
       Edit Profile
     </div>
@@ -38,6 +36,8 @@
     <div class="ui segment">
       <p>{{ profile.aboutMe }}</p>
     </div>
+  </div>
+
 
   <app-modal
     *ngIf="this.formModalContent.isVisible"
