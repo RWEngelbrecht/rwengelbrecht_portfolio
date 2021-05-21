@@ -14,7 +14,8 @@ import { AdminToolsListComponent } from './components/admin-tools-list/admin-too
 import { FormModalComponent } from './components/form-modal/form-modal.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {DividerModule} from 'primeng/divider';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DividerModule,
+    InputTextModule
   ]
 })
 export class AdminModule { }
