@@ -100,7 +100,7 @@ export class AdminAboutMeComponent implements OnInit {
     this.formModalContent.isEditing = true;
     this.formModalContent.isVisible = true;
     this.formModalContent.title = 'Edit your profile';
-    this.formModalContent.buttonText = 'Edit Profile';
+    this.formModalContent.buttonText = 'Save Edits';
 
     this.itemId = profile.id;
   }

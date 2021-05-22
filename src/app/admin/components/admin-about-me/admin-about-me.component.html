@@ -26,9 +26,9 @@
         <div>{{ uploadPercent | async }}</div>
       </div>
     </div>
-    <div class="ui button basic blue" (click)="editModal(profile)">
+    <button pButton pRipple type="button" class="p-button-secondary" (click)="editModal(profile)">
       Edit Profile
-    </div>
+    </button>
 
     <div class="ui horizontal divider"  >
       <h1 id="aboutMe">About Me</h1>
@@ -39,10 +39,10 @@
   </div>
 
 
-  <app-modal
+  <app-form-modal
     *ngIf="this.formModalContent.isVisible"
     (close)="this.formModalContent.isVisible = null"
     [formModalInputs]="formModalContent"
     (edit)="editProfile($event)"
-  ></app-modal>
+  ></app-form-modal>
 </div>
