@@ -16,7 +16,7 @@ export class ProjectsListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.$projects = this.dataService.createCollection('project-list');
+    this.$projects = this.dataService.createCollection('projects-list');
   }
 
 }

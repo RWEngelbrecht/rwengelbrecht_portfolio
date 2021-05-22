@@ -8,7 +8,6 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./tools-list.component.scss']
 })
 export class ToolsListComponent implements OnInit {
-  //TODO: ensure tool has .url property
   $tools: Observable<any>;
 
   constructor(

@@ -8,10 +8,10 @@
       <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let project of $projects | async">
         <p-card-content>
           <ng-template pTemplate="header">
-            <img src="{{ project.iconUrl }}" alt="{{ project.name }}">
+            <img src="{{ project.projectIconUrl }}" alt="{{ project.projectName }}">
           </ng-template>
-          <div class="">
-            <a class="" href="{{ project.url }}">{{ project.name }}</a>
+          <div class="p-text-center" style="color: white;">
+            <a class="" href="{{ project.projectUrl }}">{{ project.projectName }}</a>
           </div>
         </p-card-content>
       </p-card>

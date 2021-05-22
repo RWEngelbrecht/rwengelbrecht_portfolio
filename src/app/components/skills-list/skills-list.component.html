@@ -8,9 +8,9 @@
       <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let skill of skills | async">
         <p-card-content>
           <ng-template pTemplate="header">
-            <img class="ui rounded image" src="{{ skill.imgUrl }}">
+            <img class="ui rounded image" src="{{ skill.skillImgUrl }}">
           </ng-template>
-          <div>{{ skill.name }}</div>
+          <div>{{ skill.skillName }}</div>
         </p-card-content>
       </p-card>
     </div>

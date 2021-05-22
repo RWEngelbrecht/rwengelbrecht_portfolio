@@ -8,10 +8,10 @@
       <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let tool of $tools | async">
         <p-card-content>
           <ng-template pTemplate="header">
-            <img class="ui avatar image" src="{{ tool.imgUrl }}">
+            <img class="ui avatar image" src="{{ tool.toolImgUrl }}">
           </ng-template>
           <div class="">
-            <a class="header" href="{{ tool.url }}">{{ tool.name }}</a>
+            <a class="header" href="{{ tool.toolUrl }}">{{ tool.name }}</a>
           </div>
         </p-card-content>
       </p-card>
