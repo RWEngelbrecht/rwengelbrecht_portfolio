@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DividerModule} from 'primeng/divider';
 import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {InputTextModule} from 'primeng/inputtext';
     FormsModule,
     ReactiveFormsModule,
     DividerModule,
-    InputTextModule
+    InputTextModule,
+    ButtonModule
   ]
 })
 export class AdminModule { }
