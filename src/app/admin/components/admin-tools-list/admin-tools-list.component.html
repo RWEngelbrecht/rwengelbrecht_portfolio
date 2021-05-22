@@ -24,12 +24,12 @@
     </div>
   </div>
 
-  <app-modal
+  <app-form-modal
     *ngIf="this.formModalContent.isVisible"
     (close)="this.formModalContent.isVisible = null"
     [formModalInputs]="formModalContent"
     (submit)="addTool($event)"
     (edit)="editTool($event)"
-  ></app-modal>
+  ></app-form-modal>
 
 </div>
