@@ -8,9 +8,9 @@
     Add a new tool
   </button>
 
-  <div class="ui list" *ngFor="let tool of $tools | async">
+  <div class="ui list" *ngFor="let tool of $tools | async" >
     <div class="item">
-      <img class="ui avatar image" src="{{ tool.toolImgUrl }}">
+      <img class="ui avatar image" src="{{ tool.toolImgUrl }}" [style]="{'width': '10rem'}">
       <div class="content">
         <a class="header">{{ tool.toolName }}</a>
       </div>

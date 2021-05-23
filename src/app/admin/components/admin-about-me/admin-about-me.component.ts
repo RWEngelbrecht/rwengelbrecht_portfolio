@@ -92,8 +92,9 @@ export class AdminAboutMeComponent implements OnInit {
   }
 
   public editProfile($event) {
-    const { firstName, lastName, jobTitle, startYear, company, aboutMe } = $event;
-    this.profileCollectionRef.doc(this.itemId).update({ firstName, lastName, jobTitle, startYear, company, aboutMe });
+    const { firstName, lastName, jobTitle, startYear, companyName, aboutMe } = $event;
+    console.log($event);
+    this.profileCollectionRef.doc(this.itemId).update({ firstName, lastName, jobTitle, startYear, companyName, aboutMe });
   }
 
   public editModal(profile: IProfile) {

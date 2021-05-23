@@ -9,9 +9,9 @@
     Add a new skill
   </button>
 
-  <div class="ui list" *ngFor="let skill of $skills | async">
+  <div class="ui list" *ngFor="let skill of $skills | async" >
     <div class="item">
-      <img class="ui avatar image" src="{{ skill.skillImgUrl }}">
+      <img class="ui avatar image" src="{{ skill.skillImgUrl }}" [style]="{'width': '10rem'}">
       <div class="content">
         <a class="header">{{ skill.skillName }}</a>
         <div class="description"> Skill Level: {{ skill.skillLevel }}</div>
