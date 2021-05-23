@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import {Observable} from 'rxjs';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
@@ -11,12 +12,12 @@ import {Observable} from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  resumeDownloadLink = '#'; // Add download link here
-  githubLink = '#'; // Add github link here
-  twitterlink = '#'; // Add twitter link here
-  linkedinLink = '#'; // You guessed it!! LinkedIn link here
+  cvDownloadLink = 'https://firebasestorage.googleapis.com/v0/b/rwengelbrecht-portfolio.appspot.com/o/rwengelbrecht_cv.pdf?alt=media&token=3ca94d62-063b-4118-b3d1-30beb7b32758'; // Add download link here
+  githubLink = 'https://github.com/RWEngelbrecht'; // Add github link here
+  linkedinLink = 'https://www.linkedin.com/in/rigardt-engelbrecht-92063a11a/'; // You guessed it!! LinkedIn link here
 
   messagesCount$: Observable<any>;
+  items: MenuItem[];
 
   constructor(
     private authService: AuthService,
@@ -27,6 +28,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.messagesCount$ = this.dataService.getMessagesCount();
+    this.items = [
+      { label: 'CV', icon: 'pi pi-cloud-download', url: this.cvDownloadLink, style: "" },
+      { label: 'GitHub', icon: 'pi pi-github', url: this.githubLink, style: "" },
+      { label: 'LinkedIn', icon: '', url: this.linkedinLink, style: "" }
+    ]
   }
 
   public logout() {

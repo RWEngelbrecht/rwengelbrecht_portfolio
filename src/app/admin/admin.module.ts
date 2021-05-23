@@ -14,9 +14,12 @@ import { AdminToolsListComponent } from './components/admin-tools-list/admin-too
 import { FormModalComponent } from './components/form-modal/form-modal.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import {DividerModule} from 'primeng/divider';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import {MenubarModule} from 'primeng/menubar';
+import {BadgeModule} from 'primeng/badge';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import {ButtonModule} from 'primeng/button';
     ReactiveFormsModule,
     DividerModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    MenubarModule,
+    BadgeModule
   ]
 })
 export class AdminModule { }
