@@ -23,6 +23,7 @@ import {DividerModule} from 'primeng/divider';
 import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {AvatarModule} from 'primeng/avatar';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     PortfolioPageComponent,
     ProjectsListComponent,
     SkillsListComponent,
-    ToolsListComponent
+    ToolsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,8 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     DividerModule,
     CardModule,
     InputTextModule,
-    InputTextareaModule
+    InputTextareaModule,
+    AvatarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
