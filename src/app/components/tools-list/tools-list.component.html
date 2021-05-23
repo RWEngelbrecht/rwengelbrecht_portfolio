@@ -5,15 +5,15 @@
       <div class="p-text-uppercase p-text-light" style="color: white" id="projects">Tools</div>
     </p-divider>
     <div class="p-d-inline-flex p-flex-wrap p-shadow-4 ">
-      <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let tool of $tools | async">
-        <p-card-content>
-          <ng-template pTemplate="header">
-            <img class="ui avatar image" src="{{ tool.toolImgUrl }}">
-          </ng-template>
-          <div class="">
-            <a class="header" href="{{ tool.toolUrl }}">{{ tool.name }}</a>
-          </div>
-        </p-card-content>
+      <p-card class="p-d-inline" *ngFor="let tool of $tools | async" [style]="{'width': '10rem'}">
+        <div class="p-text-center">
+          <!-- <a href="{{ tool.toolUrl }}"> -->
+            <p-avatar image="{{ tool.toolImgUrl }}" size="xlarge" shape="circle"></p-avatar>
+            <div style="color: white;">
+              {{ tool.toolName }}
+            </div>
+          <!-- </a> -->
+        </div>
       </p-card>
     </div>
   </div>

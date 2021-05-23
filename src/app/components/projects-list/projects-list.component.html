@@ -5,15 +5,13 @@
       <div class="p-text-uppercase p-text-light" style="color: white" id="projects">Projects</div>
     </p-divider>
     <div class="p-d-inline-flex p-flex-wrap p-shadow-4">
-      <p-card class="p-d-inline p-p-0 p-p-sm-1 p-p-md-2 p-p-lg-3" *ngFor="let project of $projects | async">
-        <p-card-content>
-          <ng-template pTemplate="header">
-            <img src="{{ project.projectIconUrl }}" alt="{{ project.projectName }}">
-          </ng-template>
+      <p-card class="p-d-inline" *ngFor="let project of $projects | async">
+        <a class="" href="{{ project.projectUrl }}">
+          <p-avatar image="{{ project.projectIconUrl }}"></p-avatar>
           <div class="p-text-center" style="color: white;">
-            <a class="" href="{{ project.projectUrl }}">{{ project.projectName }}</a>
+            {{ project.projectName }}
           </div>
-        </p-card-content>
+        </a>
       </p-card>
     </div>
   </div>
