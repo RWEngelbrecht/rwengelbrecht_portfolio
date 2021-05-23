@@ -24,6 +24,7 @@ import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {AvatarModule} from 'primeng/avatar';
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {AvatarModule} from 'primeng/avatar';
     CardModule,
     InputTextModule,
     InputTextareaModule,
-    AvatarModule
+    AvatarModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
