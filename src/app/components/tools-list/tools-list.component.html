@@ -7,7 +7,7 @@
     <div class="p-d-inline-flex p-flex-wrap" *ngFor="let tool of $tools | async">
       <p-card class="p-d-inline p-mr-2 p-mb-2"  [style]="{'width': '10rem'}">
         <div class="p-text-center">
-            <p-avatar image="{{ tool.toolImgUrl }}" size="xlarge" shape="circle"></p-avatar>
+            <p-avatar image="{{ tool.toolImgUrl }}" size="xlarge"></p-avatar>
             <div style="color: white;">
               {{ tool.toolName }}
             </div>

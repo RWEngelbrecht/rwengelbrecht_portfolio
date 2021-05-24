@@ -6,10 +6,12 @@
     </p-divider>
     <div class="p-d-inline-flex p-flex-wrap" *ngFor="let project of $projects | async">
       <p-card class="p-d-inline p-mr-2 p-mb-2" >
-        <a class="" href="{{ project.projectUrl }}">
-          <p-avatar image="{{ project.projectIconUrl }}"></p-avatar>
+        <a href="{{ project.projectUrl }}">
           <div class="p-text-center" style="color: white;">
-            {{ project.projectName }}
+            <p-avatar class="p-mb-2 p-d-block" image="{{ project.projectIconUrl }}" size="xlarge"></p-avatar>
+            <div class="p-d-block">
+              {{ project.projectName }}
+            </div>
           </div>
         </a>
       </p-card>
