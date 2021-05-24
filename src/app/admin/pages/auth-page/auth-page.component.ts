@@ -30,7 +30,8 @@ export class AuthPageComponent implements OnInit {
 
     isAuthenticated.then(() => this.router.navigate(['auth/admin'])).catch(err => {
       console.log('Authentication error: ', err.message);
-      this.router.navigate(['/'], {relativeTo: this.route})
+      this.login.reset()
+      this.router.navigate(['/auth'], {relativeTo: this.route})
     })
   }
 
