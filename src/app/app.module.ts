@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 
 import {MenubarModule} from 'primeng/menubar';
@@ -25,6 +26,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {AvatarModule} from 'primeng/avatar';
 import {TooltipModule} from 'primeng/tooltip';
+import {MessageService} from 'primeng/api';
+import {MessagesModule} from 'primeng/messages';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ import {TooltipModule} from 'primeng/tooltip';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
+    BrowserAnimationsModule,
     MenubarModule,
     ButtonModule,
     DividerModule,
@@ -52,9 +56,12 @@ import {TooltipModule} from 'primeng/tooltip';
     InputTextModule,
     InputTextareaModule,
     AvatarModule,
-    TooltipModule
+    TooltipModule,
+    MessagesModule
   ],
-  providers: [],
+  providers: [
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
