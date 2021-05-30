@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
+import { MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-contact-form',
@@ -36,7 +38,8 @@ export class ContactFormComponent implements OnInit {
   })
 
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +48,8 @@ export class ContactFormComponent implements OnInit {
   public sendEmail() {
     this.toggleLoading();
     this.dataService.saveContactDetails(this.contactMeForm.value)
-      .then(() => {this.toggleSuccess()}).catch(err => console.error('Something went wrong: ', err))
+      .then(() => {this.toggleSuccess()})
+      .catch(err => console.error('Something went wrong: ', err))
       .finally(() => {
         this.contactMeForm.reset()
         if (!this.isSuccessful) { this.toggleLoading(); }
@@ -65,10 +69,20 @@ export class ContactFormComponent implements OnInit {
   public toggleSuccess() {
     if (!this.isSuccessful) {
       this.isSuccessful = true;
-      this.formClassState = 'ui equal width form segment success';
+      this.messageService.add({
+        severity: 'info',
+        summary:'Success',
+        detail:'You have sent me a message. Thanks for reaching out!'
+      });
+      // this.formClassState = 'ui equal width form segment success';
     } else {
       this.isSuccessful = false;
-      this.formClassState = 'ui equal width form segment'
+      this.messageService.add({
+        severity: 'error',
+        summary:'Error',
+        detail:'Something went wrong while trying to send that. Try again?'
+      });
+      // this.formClassState = 'ui equal width form segment'
     }
   }
 

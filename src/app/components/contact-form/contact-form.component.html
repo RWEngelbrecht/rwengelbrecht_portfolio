@@ -5,7 +5,8 @@
       <div class="p-text-uppercase p-text-light" style="color: white">Contact Me</div>
     </p-divider>
     <div class="">
-      <form [ngClass]="formClassState" [formGroup]="contactMeForm" (ngSubmit)="sendEmail()" style="padding: 10px">
+      <p-messages></p-messages>
+      <form [ngClass]="formClassState" [formGroup]="contactMeForm" (ngSubmit)="sendEmail()">
         <div class="p-fluid p-grid">
           <div class="p-col-12 p-md-6">
             <div class="p-inputgroup">
@@ -58,8 +59,8 @@
           </div>
         </div>
         <button pButton pRipple class="p-button-raised p-button-secondary" type="submit" [disabled]="!contactMeForm.valid">Send Email</button>
-        <div class="ui error message"></div>
       </form>
+
     </div>
   </div>
 </div>
